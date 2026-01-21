@@ -197,6 +197,41 @@
       margin: 0 0 12px;
       max-width: 820px;
     }
+    .slide-extra{
+      border:1px solid rgba(229,231,235,.9);
+      background: rgba(255,255,255,.72);
+      border-radius: 14px;
+      padding: 12px 14px;
+      box-shadow: var(--shadow2);
+      max-width: 900px;
+      margin-bottom: 10px;
+    }
+    .extra-title{
+      font-size: 14px;
+      font-weight: 700;
+      color:#111827;
+    }
+    .extra-sub{
+      margin-top: 2px;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .extra-list{
+      margin: 8px 0 0;
+      padding-left: 18px;
+      font-size: 12px;
+      column-count: 2;
+      column-gap: 18px;
+    }
+    .extra-list li{
+      margin: 4px 0;
+      line-height: 1.35;
+      break-inside: avoid;
+    }
+    @media (max-width: 760px){
+      .extra-list{ column-count: 1; }
+    }
     .callout{
       border:1px solid rgba(229,231,235,.9);
       background: rgba(255,255,255,.72);
@@ -257,6 +292,78 @@
       padding-left: 18px;
       color:#111827;
     }
+    .bench{
+      display:grid;
+      gap:10px;
+      margin-top: 6px;
+    }
+    .bench-list{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .bench-item{
+      text-align:center;
+      border:1px solid rgba(229,231,235,.9);
+      background: rgba(255,255,255,.78);
+      width:32px;
+      height:32px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 12px;
+      color:#111827;
+      cursor: pointer;
+      display:grid;
+      place-items:center;
+    }
+    .bench-item.active{
+      border-color: rgba(244,200,74,.85);
+      background: rgba(244,200,74,.20);
+    }
+    .bench-detail{
+      border:1px solid rgba(229,231,235,.9);
+      background: rgba(255,255,255,.8);
+      border-radius: var(--radius2);
+      padding: 10px 12px;
+      box-shadow: var(--shadow2);
+    }
+    .bench-title{
+      font-size: 13px;
+      font-weight: 700;
+      color:#111827;
+      margin-bottom: 4px;
+    }
+    .bench-meta{
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .bench-cols{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .bench-sub{
+      font-size: 12px;
+      font-weight: 700;
+      color:#111827;
+      margin-bottom: 4px;
+    }
+    .bench-ul{
+      margin: 0;
+      padding-left: 16px;
+      font-size: 12px;
+      color:#111827;
+    }
+    .bench-note{
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    @media (max-width: 520px){
+      .bench-cols{ grid-template-columns: 1fr; }
+    }
     .left-media{
       margin-top: 6px;
       border:1px solid rgba(229,231,235,.85);
@@ -289,6 +396,23 @@
       place-items: center;
       box-shadow: 0 10px 22px rgba(31,41,55,.12);
     }
+    .img-next{
+      position:absolute;
+      right:10px;
+      top:50%;
+      transform: translateY(-50%);
+      border:1px solid rgba(229,231,235,.9);
+      background: rgba(255,255,255,.92);
+      width:30px;
+      height:30px;
+      border-radius: 999px;
+      font-weight: 700;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 22px rgba(31,41,55,.12);
+      z-index: 2;
+    }
     .bullets li{
       margin: 8px 0;
       line-height: 1.55;
@@ -303,6 +427,40 @@
       margin-top: 12px;
     }
     @media (max-width: 520px){ .stats{ grid-template-columns: 1fr; } }
+
+    .gaps-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .gap-card{
+      border:1px solid rgba(229,231,235,.9);
+      background: rgba(255,255,255,.78);
+      border-radius: var(--radius2);
+      padding: 12px;
+      box-shadow: 0 10px 22px rgba(31,41,55,.06);
+    }
+    .gap-title{
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: .2px;
+      text-transform: uppercase;
+    }
+    .gap-value{
+      font-size: 18px;
+      font-weight: 800;
+      color:#111827;
+      margin-top: 2px;
+    }
+    .gap-note{
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    @media (max-width: 520px){ .gaps-grid{ grid-template-columns: 1fr; } }
 
     .stat{
       border:1px solid rgba(229,231,235,.9);
@@ -411,6 +569,16 @@
       overflow:hidden;
       position:relative;
     }
+    .img.chart{
+      aspect-ratio: 860 / 320;
+      background: rgba(255,255,255,.9);
+      border-style: solid;
+    }
+    .img canvas{
+      width:100%;
+      height:100%;
+      display:block;
+    }
     .img img{
       width:100%;
       height:100%;
@@ -437,6 +605,29 @@
       width: 62%;
       height: 62%;
       object-fit: contain;
+    }
+    .chart-block{
+      border:1px solid rgba(229,231,235,.85);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.85);
+      box-shadow: var(--shadow2);
+      padding: 12px;
+    }
+    .chart-title{
+      font-size: 13px;
+      font-weight: 700;
+      color:#111827;
+      margin: 2px 0 10px;
+    }
+    .chart-canvas{
+      width:100%;
+      height:auto;
+      aspect-ratio: 860 / 320;
+      display:block;
+      cursor: zoom-in;
+    }
+    .chart-canvas.bar{
+      aspect-ratio: 860 / 240;
     }
 
     /* Lightbox */
@@ -609,17 +800,17 @@
       <div class="slide-head">
         <div class="h1" id="title">—</div>
         <p class="sub" id="subtitle"></p>
+        <div class="slide-extra" id="slideExtra" style="display:none;"></div>
         <div class="callout" id="callout" style="display:none;"></div>
 
         <!-- ✅ Cover-only elements -->
         <div class="cover-wrap" id="coverArea" style="display:none;">
           <div class="cover-image">
-            <img src="assets/cover.png" alt="Cover">
+            <img src="assets/guazi logo (1).svg" alt="Guazi logo">
           </div>
 
           <div class="cover-logos">
             <div class="logo-card"><img src="assets/tomorrow.jpeg" alt="Tomorrow Systems"></div>
-            <div class="logo-card"><img src="assets/guazi.png" alt="Guazi"></div>
           </div>
 
           <div style="display:flex;justify-content:center;">
@@ -636,8 +827,10 @@
           </div>
 
           <div class="left-media" id="leftMedia" style="display:none;"></div>
+          <div class="bench" id="benchmarkWrap" style="display:none;"></div>
           <ul class="bullets" id="bullets"></ul>
           <div class="growth-card" id="growthCard" style="display:none;"></div>
+          <div class="gaps-grid" id="gaps" style="display:none;"></div>
           <div class="stats" id="stats"></div>
         </div>
 
@@ -727,7 +920,6 @@
           "Internal portfolio figures and project references (Tomorrow Systems materials)."
         ]
       },
-
       {
         id: "market-context",
         tab: "Strategic Deployment",
@@ -737,109 +929,154 @@
         leftTag: "Growth & adoption",
         rightTag: "Evidence",
         bullets: [
-          "<b>New vehicle market growth</b>: 122,000 units (2014) → 176,000 units (2024) <span class='muted'>(+44k / +36%)</span>.",
-          "<b>Chinese brands are mainstream</b>: ~<b>32%</b> of total sales; ~<b>25–30%</b> of new registrations (2025 est.).",
-          "<b>Chinese brands momentum</b>: 2,392 units (end July 2024) → 8,210 units (end July 2025 est.) <span class='muted'>(+240% YoY)</span>.",
-          "<b>EV/hybrid acceleration</b>: 550 units (2023) → 5,500 expected (2025) <span class='muted'>(x10 in 2 years)</span>."
+          "<b>2024 total market size</b>: 176,401 units <span class='muted'>(+9.2% YoY)</span>.",
+          "<b>Oct total sales (VP+VUL)</b>: 2023 14,111 · 2024 15,003 · 2025 19,561.",
+          "<b>Chinese brands share</b>: ~32% of total sales <span class='muted'>(industry estimate, not AIVAM official)</span>.",
+          "<b>NEV adoption (2024)</b>: 11,134 units, 6.3% share <span class='muted'>(hybrid-led)</span>."
         ],
         stats: [
-          { k: "New vehicle sales growth", v: "+36%", note: "2014→2024 (122k→176k)." },
-          { k: "Chinese brands share", v: "32%", note: "Share of total sales (snapshot from shared visuals)." },
-          { k: "Chinese brands growth", v: "+240%", note: "Example YoY jump (2,392→8,210)." },
-          { k: "EV/Hybrid growth", v: "x10", note: "2023→2025 (550→5,500 expected)." }
+          { k: "Total market 2024", v: "176,401", note: "+9.2% YoY" },
+          { k: "NEV 2024", v: "11,134", note: "6.3% share (hybrid-led)" },
+          { k: "Oct 2025 total", v: "19,561", note: "VP+VUL (Oct 2025)" },
+          { k: "Chinese brands share (est.)", v: "~32%", note: "Industry estimate" }
         ],
+        trend: {
+          months: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+          series: [
+            { name: "2024", data: [12425,10702,12618,14022,12971,14316,15498,18287,14626,15003,14039,22622], color: "#0ea15b" },
+            { name: "2023", data: [11821,12265,13047,11391,10849,13317,14233,14191,13411,14111,12743,17518], color: "#4f6bff" },
+            { name: "2022", data: [12527,13947,12773,12117,10527,11286,12504,12913,13269,13358,12266,16121], color: "#94a3b8" }
+          ],
+          cumul: [
+            { label: "2024", value: 137953, color: "#0ea15b" },
+            { label: "2025", value: 186415, color: "#ff8a5b" }
+          ],
+          oct: [
+            { label: "Oct 2023", value: 14111 },
+            { label: "Oct 2024", value: 15003 },
+            { label: "Oct 2025", value: 19561 }
+          ]
+        },
         images: [
-          { label: "Chinese brands in Morocco (infographic)", src: "assets/Chinese brands in Morocco.png" },
-          { label: "Top 10 Chinese cars (infographic)", src: "assets/Top 10 Chinese cars.png" },
+          {
+            frames: [
+              { label: "Monthly VP+VUL (2022–2024)", chart: "trend_line" },
+              { label: "Cumul Jan–Oct (2024–2025)", chart: "trend_cumul" }
+            ]
+          },
+          {
+            frames: [
+              { label: "Chinese brands in Morocco (infographic)", src: "assets/Chinese brands in Morocco.png" },
+              { label: "Top 10 Chinese cars (infographic)", src: "assets/Top 10 Chinese cars.png" }
+            ]
+          }
         ],
         sources: [
-          "Infographics shared by client/team (AutoActu / Le Desk cited in the visuals).",
-          "Use official/press confirmation sources in final client version."
+          "AIVAM 2024 report (total market + NEV).",
+          "AIVAM Oct 2025 release (Oct 2025 + cumul Jan–Oct 2025).",
+          "Chinese brands share is an industry estimate (not AIVAM official)."
         ]
       },
 
-      {
-        id: "problem",
-        tab: "Used-Car Ecosystem",
-        title: "The problem",
-        subtitle: "The market is large and active, but structurally fragile — trust, transparency, and standardization remain weak.",
-        callout: "Growth is not the issue. The issue is the lack of a trusted, standardized, end-to-end used-car journey.",
-        leftTag: "Market pain",
-        rightTag: "Impact",
-        bullets: [
-          "<b>Trust deficit</b>: fear of hidden defects, mileage fraud, accident history gaps.",
-          "<b>No standardized inspection</b>: quality varies; reports are not comparable.",
-          "<b>Price opacity</b>: same car = different prices; hard to validate fair value.",
-          "<b>Fraud risk</b>: deposits, fake listings, identity uncertainty.",
-          "<b>Fragmented journey</b>: search → inspect → finance → paperwork are disconnected."
-        ],
-        stats: [
-          { k: "Buyer friction", v: "High", note: "Time + uncertainty across the journey." },
-          { k: "Trust level", v: "Low–Medium", note: "Perceived risk remains high." },
-        ],
-        images: [
-          { label: "Buyer journey map (add your diagram)", src: "assets/Buyer journey map.png" },
-          { label: "Trust gap visual", src: "assets/Trust gap visual.png" },
-        ],
-        sources: [
-          "Market observations + recurring buyer/seller friction patterns."
-        ]
-      },
 
       {
         id: "benchmark",
         tab: "Used-Car Ecosystem",
-        title: "Benchmark — why existing solutions fall short",
-        subtitle: "Many tools exist, but they solve isolated parts — not the full trust architecture.",
-        callout: "",
-        leftTag: "Existing channels",
-        rightTag: "Where it fails",
-        bullets: [
-          "<b>Listing sites (e.g., Avito)</b>: great visibility & filters, but <b>no verification</b>, <b>no responsibility</b>.",
-          "<b>Social marketplaces (e.g., Facebook Marketplace / groups)</b>: fast reach, but <b>high fraud exposure</b> and weak identity certainty.",
-          "<b>Brokers / middlemen</b>: speed and negotiation, but <b>informal</b>, inconsistent, and conflicts of interest.",
-          "<b>Dealers/showrooms</b>: more structured, but higher prices and <b>uneven inspection quality</b>.",
-          "<b>Garages/inspections</b>: available, but <b>not standardized</b>; reports vary; no end-to-end accountability.",
-          "<b>Financing</b>: exists, but disconnected from early search and vehicle validation."
-        ],
-        stats: [
-          { k: "Core gap", v: "No E2E", note: "No single continuous journey & responsibility." },
-          { k: "Protection", v: "Reactive", note: "Warnings after risk, not prevention." },
+        title: "Benchmark",
+        subtitle: "Validated benchmark of the Moroccan used-car ecosystem.",
+        callout: "The Moroccan used-car market is liquid and digital, but remains fragmented, informal, and trust-deficient — no player owns the full transaction lifecycle.",
+        leftTag: "Channel map",
+        rightTag: "Limits & gaps",
+        benchmarkItems: [
+          {
+            title: "1) Open marketplaces (C2C / low structure)",
+            short: "1) Open marketplaces",
+            examples: "Avito, Moteur.ma, Facebook Marketplace / groups",
+            strengths: ["High visibility & traffic", "Strong filters, fast reach"],
+            limits: ["No seller responsibility", "High fraud exposure", "No mandatory inspection/verification (some listings may show optional expertise reports)", "No end-to-end dispute handling"],
+            note: "Pure listing platforms, not transaction platforms."
+          },
+          {
+            title: "2) Digital used-car marketplaces (structured but fragmented)",
+            short: "2) Digital marketplaces",
+            examples: "Autocaz (Auto Hall), Kifal Auto, AUTO24.ma, Renew Maroc, GlobalOccaz",
+            strengths: ["Better UX than C2C", "Some inspection or certification logic", "Price guidance / estimation", "Higher trust than Avito/Facebook"],
+            limits: ["Inspection standards not unified", "Responsibility unclear post-delivery", "No end-to-end accountability", "Logistics / export not covered"],
+            note: "Improved trust, but fragmented execution."
+          },
+          {
+            title: "3) Manufacturer-backed certified networks",
+            short: "3) Certified networks",
+            examples: "SPOTICAR Maroc, Auto Hall (via Autocaz)",
+            strengths: ["Brand trust", "Certified vehicles", "Warranty & after-sales", "Physical showrooms"],
+            limits: ["Higher prices", "Limited brand scope", "Closed ecosystems", "Domestic focus only"],
+            note: "Safe but not scalable marketplaces."
+          },
+          {
+            title: "4) Brokers & middlemen (informal but dominant)",
+            short: "4) Brokers & middlemen",
+            strengths: ["Speed & negotiation", "Market knowledge"],
+            limits: ["Informal & opaque", "Conflicts of interest", "No inspection standard", "No liability"],
+            note: "Liquidity without trust."
+          },
+          {
+            title: "5) Garages & inspection services",
+            short: "5) Garages & inspection",
+            strengths: ["Widely available", "Low cost"],
+            limits: ["No national standard", "Variable report quality", "No accountability if mismatch"],
+            note: "Inspection exists, but not systematized."
+          },
+          {
+            title: "6) Financing & insurance (disconnected layer)",
+            short: "6) Financing & insurance",
+            examples: "Banks, leasing, insurers",
+            strengths: [],
+            limits: ["Financing exists for some players (especially certified networks), but market-wide integration is inconsistent and not end-to-end.", "No linkage to vehicle condition", "No conditional approval based on inspection"],
+            note: "Finance comes too late in the journey."
+          }
         ],
         images: [
-          { label: "Channel map (add)", src: "assets/Channel map.png" },
+          {
+            frames: [
+              { label: "Buyer journey map", src: "assets/Buyer%20journey%20map.png" },
+              { label: "Channel map (add)", src: "assets/Channel map.png" }
+            ]
+          },
           { label: "Fragmentation visual (add)", src: "assets/Fragmentation visual.png" },
         ],
         sources: [
-          "Common channel behaviors in Morocco: listings, social, brokers, dealers, garages, banks."
+          "Validated benchmark: Avito, Facebook Marketplace/groups, Autocaz, Kifal Auto, AUTO24.ma, OtoClic, SuperOccaz, Global Occaz, Renew Maroc, Siaracash, SPOTICAR Maroc, Auto Hall."
         ]
       },
 
       {
         id: "missing",
         tab: "Used-Car Ecosystem",
-        title: "What is missing",
+        title: "The Gap to Fix",
         subtitle: "The missing layer is trust infrastructure: verification, standards, pricing intelligence, and end-to-end accountability.",
         callout: "The market has components — but lacks integration, standardization, and preventive protection.",
-        leftTag: "Missing layer",
-        rightTag: "Outcomes",
+        leftTag: "Trust stack gaps",
+        rightTag: "Evidence",
         bullets: [
-          "<b>Verified vehicle + seller identity</b> before a listing becomes “trusted”.",
-          "<b>Unified inspection standard</b> with comparable reports and grading.",
-          "<b>Reference pricing</b> based on model/year/mileage/condition/city.",
-          "<b>Preventive fraud protection</b> (not just warnings).",
-          "<b>One continuous journey</b>: discovery → inspection → financing → paperwork → handover.",
-          "<b>Clear post-sale responsibility</b> (what happens if issues appear)."
+          "<b>Verified seller + vehicle identity</b> before a “trusted” listing.",
+          "<b>Unified inspection standard</b> + grading.",
+          "<b>Reference pricing intelligence</b> (model/year/mileage/condition/city).",
+          "<b>Preventive fraud protection</b> (not only warnings).",
+          "<b>End-to-end accountability</b>: discovery → inspection → financing → paperwork → handover + post-sale."
         ],
-        stats: [
-          { k: "Verification", v: "Missing", note: "Upfront identity + vehicle checks." },
-          { k: "Standardization", v: "Missing", note: "Comparable inspections & grading." },
-          { k: "Transparency", v: "Missing", note: "Price intelligence & fair value." },
-          { k: "Integration", v: "Missing", note: "Connected steps, less friction." }
+        trustGaps: [
+          { title: "Verification", value: "Missing", note: "Upfront identity + vehicle checks." },
+          { title: "Standardization", value: "Missing", note: "Comparable inspections & grading." },
+          { title: "Transparency", value: "Missing", note: "Price intelligence & fair value." },
+          { title: "Integration", value: "Missing", note: "Connected steps, less friction." }
         ],
         images: [
-          { label: "Trust stack diagram (add)", src: "assets/Trust stack diagram.png" },
-          { label: "Standard inspection report mock (add)", src: "assets/Standard inspection report mock.png" },
+          {
+            frames: [
+              { label: "Trust stack diagram", src: "assets/Trust stack diagram.png" },
+              { label: "Standard inspection report mock", src: "assets/Standard inspection report mock.png" }
+            ]
+          }
         ],
         sources: [
           "Benchmark conclusion from market structure: components exist, trust layer missing."
@@ -849,7 +1086,7 @@
       {
         id: "why-guazi",
         tab: "Strategic Deployment",
-        title: "Why <span class='accent'>Guazi</span> is the right partner",
+        title: "Why <span class='accent'>Guazi</span>",
         subtitle: "China moved from distrust to global confidence — Guazi comes from a mature ecosystem that solved used-car trust at scale.",
         callout: "10–15 years ago: skepticism. Today: proven quality + modern tech + massive market maturity.",
         leftTag: "Trust shift",
@@ -859,14 +1096,18 @@
           "<b>China is a mature automotive ecosystem</b>: intense competition forces high standards.",
           "<b>Guazi is built for used-car trust</b>: inspection logic, pricing intelligence, transaction control.",
           "<b>Proven at scale</b>: experience from a market with huge transaction volumes and operational complexity.",
-          "<b>Know-how transfer</b>: processes, playbooks, and tech patterns adaptable to local reality."
+          "<b>Know-how transfer</b>: processes, playbooks, and tech patterns adaptable to local reality.",
+          "<b>Export readiness know-how</b>: structured workflow from inspection to export shipment.",
+          "<b>Operational maturity at scale</b>: repeatable SOPs built for high transaction volumes.",
+          "<b>Inspection & liability control</b>: standardized inspections with evidence chain (photos/time stamps).",
+          "<b>Logistics clarity</b>: Incoterms support (recommend CIF), insurance options, and clear risk transfer."
         ],
         stats: [
           { k: "Chinese brands share (Morocco)", v: "25–32%", note: "Snapshot from shared visuals." },
           { k: "Growth signal", v: "+240%", note: "Example YoY jump highlighted in infographic." }
         ],
         images: [
-          { label: "Guazi logo", src: "assets/guazi.png" },
+          { label: "Guazi logo", src: "assets/guazi logo (1).svg" },
           { label: "Add another visual here", src: "assets/Add another visual here.png" },
         ],
         sources: [
@@ -955,12 +1196,15 @@
     const titleEl = $("#title");
     const subtitleEl = $("#subtitle");
     const calloutEl = $("#callout");
+    const extraEl = $("#slideExtra");
 
     const bulletsEl = $("#bullets");
     const statsEl = $("#stats");
     const growthEl = $("#growthCard");
+    const gapsEl = $("#gaps");
     const leftTitleWrapEl = $("#panelTitleLeftWrap");
     const leftMediaEl = $("#leftMedia");
+    const benchmarkEl = $("#benchmarkWrap");
     const imagesEl = $("#images");
     const sourcesEl = $("#sources");
     const lightboxEl = $("#lightbox");
@@ -979,6 +1223,8 @@
 
     let idx = 0;
     const leftMediaIndex = {};
+    const rightMediaIndex = {};
+    const benchIndex = {};
 
     function buildTabs(){
       tabsEl.innerHTML = "";
@@ -1020,6 +1266,133 @@
         .replaceAll("'","&#039;");
     }
 
+    function formatNum(n){
+      return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function setupCanvas(canvas, width, height){
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = Math.round(width * dpr);
+      canvas.height = Math.round(height * dpr);
+      canvas.style.width = "100%";
+      canvas.style.height = "auto";
+      const ctx = canvas.getContext("2d");
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, width, height);
+      return { ctx, width, height };
+    }
+
+    function drawLineChart(ctx, width, height, series, labels){
+      if (!series.length || !labels.length) return;
+      const pad = { l: 54, r: 16, t: 20, b: 34 };
+      const plotW = width - pad.l - pad.r;
+      const plotH = height - pad.t - pad.b;
+      const maxVal = Math.max(...series.flatMap(s => s.data));
+      const yMax = Math.ceil(maxVal / 1000) * 1000;
+      const yMin = 0;
+      const gridCount = 4;
+
+      ctx.font = "11px 'Space Grotesk', system-ui, sans-serif";
+      ctx.fillStyle = "#6b7280";
+      ctx.strokeStyle = "rgba(148,163,184,.35)";
+      ctx.lineWidth = 1;
+      for (let i = 0; i <= gridCount; i++){
+        const t = i / gridCount;
+        const y = pad.t + plotH * (1 - t);
+        ctx.beginPath();
+        ctx.moveTo(pad.l, y);
+        ctx.lineTo(pad.l + plotW, y);
+        ctx.stroke();
+        const val = Math.round(yMin + (yMax - yMin) * t);
+        ctx.fillText(formatNum(val), 6, y + 4);
+      }
+
+      labels.forEach((label, i) => {
+        const x = pad.l + (plotW * i / (labels.length - 1));
+        ctx.fillText(label, x - 8, pad.t + plotH + 22);
+      });
+
+      series.forEach(s => {
+        ctx.strokeStyle = s.color;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        s.data.forEach((val, i) => {
+          const x = pad.l + (plotW * i / (labels.length - 1));
+          const y = pad.t + plotH * (1 - (val - yMin) / (yMax - yMin));
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+
+        ctx.fillStyle = s.color;
+        s.data.forEach((val, i) => {
+          const x = pad.l + (plotW * i / (labels.length - 1));
+          const y = pad.t + plotH * (1 - (val - yMin) / (yMax - yMin));
+          ctx.beginPath();
+          ctx.arc(x, y, 2.5, 0, Math.PI * 2);
+          ctx.fill();
+        });
+      });
+
+      let lx = pad.l;
+      const ly = 12;
+      ctx.font = "12px 'Space Grotesk', system-ui, sans-serif";
+      series.forEach((s, i) => {
+        const x = lx + i * 70;
+        ctx.fillStyle = s.color;
+        ctx.fillRect(x, ly - 8, 10, 10);
+        ctx.fillStyle = "#111827";
+        ctx.fillText(s.name, x + 14, ly + 1);
+      });
+    }
+
+    function drawBars(ctx, width, height, items){
+      if (!items.length) return;
+      const pad = { l: 54, r: 16, t: 20, b: 32 };
+      const plotW = width - pad.l - pad.r;
+      const plotH = height - pad.t - pad.b;
+      const maxVal = Math.max(...items.map(i => i.value));
+      const yMax = Math.ceil(maxVal / 10000) * 10000;
+      const gridCount = 4;
+
+      ctx.font = "11px 'Space Grotesk', system-ui, sans-serif";
+      ctx.fillStyle = "#6b7280";
+      ctx.strokeStyle = "rgba(148,163,184,.35)";
+      ctx.lineWidth = 1;
+      for (let i = 0; i <= gridCount; i++){
+        const t = i / gridCount;
+        const y = pad.t + plotH * (1 - t);
+        ctx.beginPath();
+        ctx.moveTo(pad.l, y);
+        ctx.lineTo(pad.l + plotW, y);
+        ctx.stroke();
+        const val = Math.round(yMax * t);
+        ctx.fillText(formatNum(val), 6, y + 4);
+      }
+
+      const gap = 16;
+      const barW = (plotW - gap * (items.length - 1)) / items.length;
+      ctx.font = "12px 'Space Grotesk', system-ui, sans-serif";
+      items.forEach((item, i) => {
+        const x = pad.l + i * (barW + gap);
+        const barH = plotH * (item.value / yMax);
+        const y = pad.t + plotH - barH;
+        ctx.fillStyle = item.color;
+        ctx.fillRect(x, y, barW, barH);
+        ctx.fillStyle = "#111827";
+        ctx.fillText(item.label, x, pad.t + plotH + 22);
+        ctx.fillText(formatNum(item.value), x, y - 6);
+      });
+    }
+
+    function attachCanvasLightbox(canvas, label){
+      if (!canvas) return;
+      canvas.addEventListener("click", () => {
+        const dataUrl = canvas.toDataURL("image/png");
+        openLightbox(dataUrl, label || "chart");
+      });
+    }
+
     function openLightbox(src, alt){
       if (!lightboxEl || !lightboxImgEl) return;
       lightboxImgEl.src = src;
@@ -1048,6 +1421,19 @@
       } else {
         calloutEl.style.display = "none";
         calloutEl.textContent = "";
+      }
+
+      if (s.extra){
+        const extraBullets = (s.extra.bullets || []).map(x => `<li>${escapeHtml(x)}</li>`).join("");
+        extraEl.innerHTML = `
+          <div class="extra-title">${escapeHtml(s.extra.title)}</div>
+          <div class="extra-sub">${escapeHtml(s.extra.subtitle)}</div>
+          <ul class="extra-list">${extraBullets}</ul>
+        `;
+        extraEl.style.display = "";
+      } else {
+        extraEl.style.display = "none";
+        extraEl.innerHTML = "";
       }
 
       // ✅ COVER MODE
@@ -1098,6 +1484,8 @@
       statsEl.innerHTML = "";
       growthEl.innerHTML = "";
       growthEl.style.display = "none";
+      gapsEl.innerHTML = "";
+      gapsEl.style.display = "none";
       leftMediaEl.innerHTML = "";
 
       if (hasLeftImage){
@@ -1110,6 +1498,7 @@
         bulletsEl.style.display = "none";
         statsEl.style.display = "none";
         growthEl.style.display = "none";
+        gapsEl.style.display = "none";
         leftMediaEl.style.display = "";
         leftMediaEl.innerHTML = `<img src="${escapeHtml(current.src)}" alt="${escapeHtml(current.alt || "left image")}">`;
         const leftImgEl = leftMediaEl.querySelector("img");
@@ -1129,69 +1518,206 @@
         }
       } else {
         if (leftTitleWrapEl) leftTitleWrapEl.style.display = "";
-        bulletsEl.style.display = "";
-        statsEl.style.display = "";
         leftMediaEl.style.display = "none";
 
-        (s.bullets || []).forEach(b => {
-          const li = document.createElement("li");
-          li.innerHTML = b;
-          bulletsEl.appendChild(li);
-        });
-
-        if (s.growth){
-          const rows = (s.growth.rows || []).map(r => `
-            <tr>
-              <td>${escapeHtml(r.year)}</td>
-              <td class="growth-value">${escapeHtml(r.value)}</td>
-            </tr>
+        const hasBenchmark = Array.isArray(s.benchmarkItems) && s.benchmarkItems.length > 0;
+        if (hasBenchmark){
+          const slideKey = s.id || String(idx);
+          if (benchIndex[slideKey] == null || benchIndex[slideKey] >= s.benchmarkItems.length){
+            benchIndex[slideKey] = 0;
+          }
+          const items = s.benchmarkItems;
+          const current = items[benchIndex[slideKey]];
+          const buttons = items.map((it, i) => `
+            <button class="bench-item${i === benchIndex[slideKey] ? " active" : ""}" data-idx="${i}" aria-label="${escapeHtml(it.title)}">${i + 1}</button>
           `).join("");
-          growthEl.innerHTML = `
-            <div class="growth-title">${escapeHtml(s.growth.title)}</div>
-            <div class="growth-sub">${escapeHtml(s.growth.subtitle)}</div>
-            <table class="growth-table">
-              <thead>
-                <tr><th>Year</th><th>Value</th></tr>
-              </thead>
-              <tbody>${rows}</tbody>
-            </table>
-            <div class="growth-note">${escapeHtml(s.growth.note)}</div>
+          const strengths = (current.strengths || []).map(x => `<li>${escapeHtml(x)}</li>`).join("");
+          const limits = (current.limits || []).map(x => `<li>${escapeHtml(x)}</li>`).join("");
+          benchmarkEl.innerHTML = `
+            <div class="bench-list">${buttons}</div>
+            <div class="bench-detail">
+              <div class="bench-title">${escapeHtml(current.title)}</div>
+              ${current.examples ? `<div class="bench-meta"><span class="muted">Examples:</span> ${escapeHtml(current.examples)}</div>` : ""}
+              <div class="bench-cols">
+                <div>
+                  <div class="bench-sub">Strengths</div>
+                  <ul class="bench-ul">${strengths}</ul>
+                </div>
+                <div>
+                  <div class="bench-sub">Limits</div>
+                  <ul class="bench-ul">${limits}</ul>
+                </div>
+              </div>
+              ${current.note ? `<div class="bench-note">↳ ${escapeHtml(current.note)}</div>` : ""}
+            </div>
           `;
-          growthEl.style.display = "";
-        }
+          benchmarkEl.style.display = "";
+          bulletsEl.style.display = "none";
+          statsEl.style.display = "none";
+          growthEl.style.display = "none";
+          gapsEl.style.display = "none";
+          const benchBtns = benchmarkEl.querySelectorAll(".bench-item");
+          benchBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+              const nextIdx = parseInt(btn.getAttribute("data-idx"), 10);
+              if (!Number.isNaN(nextIdx)){
+                benchIndex[slideKey] = nextIdx;
+                renderSlide(s);
+              }
+            });
+          });
+        } else {
+          benchmarkEl.style.display = "none";
+          bulletsEl.style.display = "";
+          statsEl.style.display = "";
 
-        (s.stats || []).forEach(st => {
-          const card = document.createElement("div");
-          card.className = "stat";
-          card.innerHTML = `
-            <div class="k">${escapeHtml(st.k)}</div>
-            <div class="v">${escapeHtml(st.v)}</div>
-            <div class="note">${escapeHtml(st.note || "")}</div>
-          `;
-          statsEl.appendChild(card);
-        });
+          (s.bullets || []).forEach(b => {
+            const li = document.createElement("li");
+            li.innerHTML = b;
+            bulletsEl.appendChild(li);
+          });
+
+          if (s.growth){
+            const rows = (s.growth.rows || []).map(r => `
+              <tr>
+                <td>${escapeHtml(r.year)}</td>
+                <td class="growth-value">${escapeHtml(r.value)}</td>
+              </tr>
+            `).join("");
+            growthEl.innerHTML = `
+              <div class="growth-title">${escapeHtml(s.growth.title)}</div>
+              <div class="growth-sub">${escapeHtml(s.growth.subtitle)}</div>
+              <table class="growth-table">
+                <thead>
+                  <tr><th>Year</th><th>Value</th></tr>
+                </thead>
+                <tbody>${rows}</tbody>
+              </table>
+              <div class="growth-note">${escapeHtml(s.growth.note)}</div>
+            `;
+            growthEl.style.display = "";
+          }
+
+          const hasTrustGaps = Array.isArray(s.trustGaps) && s.trustGaps.length > 0;
+          if (hasTrustGaps){
+            gapsEl.innerHTML = s.trustGaps.map(gap => `
+              <div class="gap-card">
+                <div class="gap-title">${escapeHtml(gap.title)}</div>
+                <div class="gap-value">${escapeHtml(gap.value)}</div>
+                <div class="gap-note">${escapeHtml(gap.note)}</div>
+              </div>
+            `).join("");
+            gapsEl.style.display = "";
+            statsEl.style.display = "none";
+          } else {
+            gapsEl.style.display = "none";
+            statsEl.style.display = "";
+            (s.stats || []).forEach(st => {
+              const card = document.createElement("div");
+              card.className = "stat";
+              card.innerHTML = `
+                <div class="k">${escapeHtml(st.k)}</div>
+                <div class="v">${escapeHtml(st.v)}</div>
+                <div class="note">${escapeHtml(st.note || "")}</div>
+              `;
+              statsEl.appendChild(card);
+            });
+          }
+        }
       }
 
       imagesEl.innerHTML = "";
-      (s.images || []).forEach(img => {
-        const box = document.createElement("div");
-        box.className = "img";
-        if (img.src && img.src.trim()){
-          box.classList.add("clickable");
-          if ((img.label || "").toLowerCase().includes("guazi logo") || img.src.toLowerCase().includes("guazi.png")){
-            box.classList.add("is-logo");
-          }
-          const im = document.createElement("img");
-          im.src = img.src;
-          im.alt = img.label || "image";
-          im.loading = "lazy";
-          im.addEventListener("click", () => openLightbox(img.src, img.label || "image"));
-          box.appendChild(im);
-        } else {
-          box.textContent = (img.label || "Add image") + " (drop file in assets/ and set src)";
+      if (s.chart === "trend_3y"){
+        imagesEl.innerHTML = `
+          <div class="chart-block">
+            <div class="chart-title">Monthly VP+VUL (2022–2024)</div>
+            <canvas class="chart-canvas" id="trendLine"></canvas>
+          </div>
+          <div class="chart-block">
+            <div class="chart-title">Cumul Jan→Oct (2023–2025)</div>
+            <canvas class="chart-canvas bar" id="trendCumul"></canvas>
+          </div>
+        `;
+        const trend = s.trend || {};
+        const lineCanvas = $("#trendLine");
+        if (lineCanvas){
+          const lineCtx = setupCanvas(lineCanvas, 860, 320);
+          drawLineChart(lineCtx.ctx, lineCtx.width, lineCtx.height, trend.series || [], trend.months || []);
+          attachCanvasLightbox(lineCanvas, "Monthly VP+VUL (2022–2024)");
         }
-        imagesEl.appendChild(box);
-      });
+        const barCanvas = $("#trendCumul");
+        if (barCanvas){
+          const barCtx = setupCanvas(barCanvas, 860, 240);
+          drawBars(barCtx.ctx, barCtx.width, barCtx.height, trend.cumul || []);
+          attachCanvasLightbox(barCanvas, "Cumul Jan–Oct (2023–2025)");
+        }
+      } else {
+        (s.images || []).forEach((img, i) => {
+          const box = document.createElement("div");
+          box.className = "img";
+          const frames = Array.isArray(img.frames) ? img.frames : null;
+          if (frames && frames.length){
+            const frameKey = `${s.id || idx}:${i}`;
+            if (rightMediaIndex[frameKey] == null || rightMediaIndex[frameKey] >= frames.length){
+              rightMediaIndex[frameKey] = 0;
+            }
+            const frame = frames[rightMediaIndex[frameKey]];
+            if (frame.chart){
+              box.classList.add("chart");
+              const canvas = document.createElement("canvas");
+              box.appendChild(canvas);
+              const trend = s.trend || {};
+              const size = setupCanvas(canvas, 860, 320);
+              canvas.style.height = "100%";
+              if (frame.chart === "trend_line"){
+                drawLineChart(size.ctx, size.width, size.height, trend.series || [], trend.months || []);
+              } else if (frame.chart === "trend_cumul"){
+                drawBars(size.ctx, size.width, size.height, trend.cumul || []);
+              }
+              attachCanvasLightbox(canvas, frame.label || "chart");
+            } else if (frame.src && frame.src.trim()){
+              box.classList.add("clickable");
+              if ((frame.label || "").toLowerCase().includes("guazi logo") || frame.src.toLowerCase().includes("guazi logo")){
+                box.classList.add("is-logo");
+              }
+              const im = document.createElement("img");
+              im.src = frame.src;
+              im.alt = frame.label || "image";
+              im.loading = "lazy";
+              im.addEventListener("click", () => openLightbox(frame.src, frame.label || "image"));
+              box.appendChild(im);
+            } else {
+              box.textContent = (frame.label || "Add image") + " (drop file in assets/ and set src)";
+            }
+            if (frames.length > 1){
+              const btn = document.createElement("button");
+              btn.className = "img-next";
+              btn.type = "button";
+              btn.setAttribute("aria-label", "Next image");
+              btn.textContent = ">";
+              btn.addEventListener("click", () => {
+                rightMediaIndex[frameKey] = (rightMediaIndex[frameKey] + 1) % frames.length;
+                renderSlide(s);
+              });
+              box.appendChild(btn);
+            }
+          } else if (img.src && img.src.trim()){
+            box.classList.add("clickable");
+            if ((img.label || "").toLowerCase().includes("guazi logo") || img.src.toLowerCase().includes("guazi logo")){
+              box.classList.add("is-logo");
+            }
+            const im = document.createElement("img");
+            im.src = img.src;
+            im.alt = img.label || "image";
+            im.loading = "lazy";
+            im.addEventListener("click", () => openLightbox(img.src, img.label || "image"));
+            box.appendChild(im);
+          } else {
+            box.textContent = (img.label || "Add image") + " (drop file in assets/ and set src)";
+          }
+          imagesEl.appendChild(box);
+        });
+      }
 
       sourcesEl.innerHTML = "";
       if (s.sources && s.sources.length){
