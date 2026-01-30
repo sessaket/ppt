@@ -351,6 +351,22 @@
         ]
       },
       {
+        id: "institutional-import-overview",
+        tab: "Strategic Deployment",
+        title: "Institutional framework & import overview",
+        subtitle: "Executive summary of governance, import flow, costs, and next steps.",
+        callout: "Alignment required across industrial, technical, and fiscal rules to enable compliant market access.",
+        hideRightPanel: true,
+        leftTag: "Executive overview",
+        bullets: [
+          "<b>Institutional framework:</b> Ministry of Industry & Trade (homologation, market access); Ministry of Transport & Logistics – NARSA (technical compliance, inspection); Ministry of Economy & Finance – ADII (customs, duties, taxes).",
+          "<b>Vehicle importation process:</b> Eligibility → Shipping → Customs → Taxes → Inspection → Registration.",
+          "<b>Duties & taxes (CIF-based):</b> Import duty 2.5%; VAT 20%; Parafiscal tax 0.25%; proportional stamp duty by value.",
+          "<b>Origin & powertrain impact (China):</b> No FTA with Morocco; higher landed cost vs EU; CE compliance required; BEV / PHEV most competitive.",
+          "<b>Suggested next steps:</b> Brand & model mapping; cost simulations; pilot import; technical presentation of Otomall platform; local autonomy (pricing, listings, validation, compliance)."
+        ]
+      },
+      {
         id: "closing-image",
         tab: "Morocco & Africa",
         title: "",
